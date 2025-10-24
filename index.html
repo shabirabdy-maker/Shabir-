@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigitFlow Analyzer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #0f172a;
+      color: white;
+      margin: 0;
+      padding: 50px;
+    }
+    .container {
+      background: #1e293b;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+    }
+    button {
+      background: #38bdf8;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0ea5e9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>DigitFlow Analyzer</h1>
+    <p>Changanua data zako kwa usahihi na kasi.</p>
+    <input type="number" placeholder="Ingiza namba..." id="inputNumber">
+    <button onclick="analyze()">Analyze</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function analyze() {
+      let num = document.getElementById('inputNumber').value;
+      let result = document.getElementById('result');
+      if (num === '') {
+        result.textContent = 'Tafadhali ingiza namba kwanza!';
+      } else {
+        let evenOdd = num % 2 === 0 ? 'namba shufwa (even)' : 'namba witiri (odd)';
+        result.textContent = `Umeingiza ${num}, ambayo ni ${evenOdd}.`;
+      }
+    }
+  </script>
+</body>
+</html>
