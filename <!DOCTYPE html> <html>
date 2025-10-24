@@ -1,0 +1,7 @@
+<script>
+  // check kama user ameweka password
+  const access = localStorage.getItem("access_granted");
+  if (!access) {
+    window.location.href = "login.html";
+  }
+</script>
